@@ -1,10 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <ApplicationIcon />
     <OutputTypeEx>library</OutputTypeEx>
     <StartupObject />
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="3.1.0" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Checkers\Checkers.csproj" />
+  </ItemGroup>
 </Project>
