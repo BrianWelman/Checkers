@@ -10,6 +10,8 @@ namespace Checkers
             Console.WriteLine("Hello World!");
         }
 
+        #region Interfaces
+
         public interface IBoard
         {
             IPiece Occupant(int position);
@@ -41,5 +43,67 @@ namespace Checkers
             void Play();
         }
         public class IllegalMoveException : Exception { } //Changed to Exception { }
+
+        #endregion
+
+        #region Classes
+
+        public class Board : IBoard
+        {
+            public void Move(IPiece piece, int destination)
+            {
+                throw new NotImplementedException();
+            }
+
+            public IPiece Occupant(int position)
+            {
+                throw new NotImplementedException();
+            }
+
+            public IEnumerable<int> Pieces(Color color)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Promote(IPiece piece)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void RemoveCapturedPieces()
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public class Piece : IPiece
+        {
+            public virtual Status Status => throw new NotImplementedException();
+
+            public virtual Color Color => throw new NotImplementedException();
+
+            public virtual int Position => throw new NotImplementedException();
+
+            public virtual IEnumerable<int> CapturingMoves(IBoard board)
+            {
+                throw new NotImplementedException();
+            }
+
+            public virtual void Move(int destination)
+            {
+                throw new NotImplementedException();
+            }
+             
+            public virtual IEnumerable<int> NormalMoves(IBoard board)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public class King : Piece
+        {
+        }
+
+        #endregion
     }
 }
